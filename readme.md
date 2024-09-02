@@ -1,25 +1,2 @@
-
-## Links to Tools and Frameworks
-
-### General
-* [Typescript](https://www.typescriptlang.org/)
-* [Docker](https://www.docker.com/products/docker-desktop)
-* [Prettier](https://prettier.io/)
-* [ESLint](https://eslint.org/docs/user-guide/getting-started)
-
-### Frontend Application
-* [Vite](https://vitejs.dev/)
-* [React](https://reactjs.org/)
-* [Valtio](https://github.com/pmndrs/valtio)
-* [Wouter](https://github.com/molefrog/wouter)
-* [Storybook](https://storybook.js.org/)
-* [Socket.io Client](https://socket.io/docs/v4/client-api/)
-* [Tailwind CSS](https://tailwindcss.com/)
-* [react-use](https://github.com/streamich/react-use)
-
-### Backend Application
-* [NestJS](https://nestjs.com/)
-* [Socket.io Server](https://socket.io/docs/v4/server-api/)
-* [Redis-JSON](https://oss.redis.com/redisjson/)
-* [Redis-JSON Docker Image](https://hub.docker.com/r/redislabs/rejson/)
-* [JSON Web Token](https://jwt.io/)
+# Rankr Project
+Rankr is a web-based application designed to facilitate real-time decision-making and collaboration through polls. The platform allows users to create, join, and participate in polls where they can nominate options and rank their top choices. The results are automatically calculated and displayed, providing a seamless and interactive experience. The application is built using modern web technologies, ensuring responsiveness and user-friendly interaction across devices. With real-time updates and synchronization, Rankr makes it easy for groups to reach a consensus efficiently.
