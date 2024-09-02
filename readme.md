@@ -50,4 +50,12 @@ By following these steps, you will be able to set up and run the Netflix Recomme
 6. **Displaying Results After Poll Ends**  
    ![Poll Results](poll_results.png)
 
+## Technologies Used
+
+- **Languages:** TypeScript, JavaScript
+- **Frontend:** React, Vite, Tailwind CSS
+- **Backend:** Node.js, Socket.io, Redis-JSON
+- **DevOps:** Docker
+
+
 
