@@ -1,0 +1,32 @@
+# Basic Settings
+title: "Rankr Project"
+description: "A web-based application designed to facilitate real-time decision-making and collaboration through polls."
+baseurl: "/rankr"  # Subpath of your site, should match your GitHub Pages URL
+url: "https://chenry513.github.io"  # Your GitHub Pages base URL
+
+# Deployment Settings
+theme: minima  # Optional: Change to the Jekyll theme you are using
+markdown: kramdown  # Common markdown processor used in Jekyll
+highlighter: rouge  # Code highlighting tool
+
+# SCSS/SASS Settings
+sass:
+  style: compressed  # Compress CSS to reduce page load times
+
+# Exclude settings
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - node_modules
+  - docker-compose.yml
+  - package.json
+  - package-lock.json
+
+# Plugins (optional based on your needs)
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Build settings
+markdown_ext: "markdown,mkdown,mkdn,mkd,md"
