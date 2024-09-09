@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "vite --host",
-    "build": "vite build",  // Vite build command for production
+    "build": "vite build",  
     "serve": "vite preview",
     "lint": "eslint .",
     "test": "jest src",
@@ -53,4 +53,3 @@
   }
 }
 
-}
