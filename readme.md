@@ -32,22 +32,22 @@ By following these steps, you will be able to set up and run the Netflix Recomme
 
 ## Visual Representation of Rankr Polling Process
 
-1. **Starting a Poll with its Topic**  
+### Starting a Poll with its Topic
    ![Poll Topic Creation](poll_topic_creation.png)
 
-2. **Poll ID Creation for Sharing**  
+### Poll ID Creation for Sharing
    ![Poll ID Creation](poll_id_creation.png)
 
-3. **Joining the Poll Using Poll ID**  
+### Joining the Poll Using Poll ID 
    ![Joining Poll](join_poll.png)
 
-4. **User Submitting a Poll Topic**  
+### User Submitting a Poll Topic
    ![Submitting Poll Topic](submit_poll_topic.png)
 
-5. **Ranking Selections After Voting Starts**  
+### Ranking Selections After Voting Starts 
    ![Ranking Selections](ranking_selections.png)
 
-6. **Displaying Results After Poll Ends**  
+### Displaying Results After Poll Ends
    ![Poll Results](poll_results.png)
 
 ## Technologies Used
