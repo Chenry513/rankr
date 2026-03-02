@@ -1,61 +1,111 @@
-# Rankr Project
-Rankr is a web-based application designed to facilitate real-time decision-making and collaboration through polls. The platform allows users to create, join, and participate in polls where they can nominate options and rank their top choices. The results are automatically calculated and displayed, providing a seamless and interactive experience. The application is built using modern web technologies, ensuring responsiveness and user-friendly interaction across devices. With real-time updates and synchronization, Rankr makes it easy for groups to reach a consensus efficiently.
+# Rankr — Collaborative Real-Time Ranking App
 
-## How to Run
+A real-time web application that lets groups create polls, nominate options, and rank their choices collaboratively. Results are computed and displayed instantly as votes come in — no page refreshes, no waiting.
 
-To run this project, follow these steps:
+> Built with React, TypeScript, Socket.io, and Redis. Runs locally with Docker.
 
-1. **Clone the Repository:**
-   - Clone the repository to your local machine using the following command:
-     ```bash
-     git clone https://github.com/Chenry513/rankr
-     ```
+---
 
-2. **Install Dependencies:**
-   - Install the necessary dependencies by running the following command:
-     ```bash
-     npm install concurrently --save-dev
-     ```
-    - If you encounter any issues, you can run:
-      ```bash
-      npm audit fix
-      ```
-      
-3. **Run the Application:**
-   - Start the application by running the following command:
-     ```bash
-     npm run start
-     ```
-   - Open your web browser and go to http://localhost:8080/ to view and interact with the Rankr application.
+## What This Project Does
 
-By following these steps, you will be able to set up and run the Netflix Recommendation System on your local machine.
+Rankr solves the problem of group decision-making by giving everyone a voice in real time:
 
-## Visual Representation of Rankr Polling Process
+- **Create a Poll**: Start a session with a topic and get a shareable poll ID
+- **Invite Participants**: Share the poll ID — anyone can join instantly
+- **Nominate Options**: Each participant submits their suggestions
+- **Rank Choices**: Everyone ranks the options once voting opens
+- **See Results**: Final rankings are computed and displayed automatically using aggregated vote logic
 
-### Starting a Poll with its Topic
-   ![Poll Topic Creation](poll_topic_creation.png)
+---
 
-### Poll ID Creation for Sharing
-   ![Poll ID Creation](poll_id_creation.png)
+## How It Works
 
-### Joining the Poll Using Poll ID 
-   ![Joining Poll](join_poll.png)
+```
+Host creates poll → Gets shareable Poll ID → Participants join → 
+Everyone nominates → Voting opens → Rankings submitted → Results computed → Displayed live
+```
 
-### User Submitting a Poll Topic
-   ![Submitting Poll Topic](submit_poll_topic.png)
+All state is synchronized in real time via Socket.io — every participant sees updates the moment they happen.
 
-### Ranking Selections After Voting Starts 
-   ![Ranking Selections](ranking_selections.png)
+---
 
-### Displaying Results After Poll Ends
-   ![Poll Results](poll_results.png)
+## Tech Stack
 
-## Technologies Used
+**Frontend:**
+- React + TypeScript
+- Vite
+- Tailwind CSS
 
-- **Languages:** TypeScript, JavaScript
-- **Frontend:** React, Vite, Tailwind CSS
-- **Backend:** Node.js, Socket.io, Redis-JSON
-- **DevOps:** Docker
+**Backend:**
+- Node.js
+- Socket.io — real-time bidirectional communication
+- Redis (RedisJSON) — low-latency session and vote state storage
 
+**Infrastructure:**
+- Docker + Docker Compose — containerized local development
+
+---
+
+## Local Setup
+
+```bash
+# 1. Clone the repo
+git clone https://github.com/Chenry513/rankr
+cd rankr
+
+# 2. Install dependencies
+npm install concurrently --save-dev
+
+# 3. Start Redis via Docker
+docker-compose up -d
+
+# 4. Run the app
+npm run start
+```
+
+Visit `http://localhost:8080`
+
+> If you hit dependency issues run `npm audit fix`
+
+---
+
+## Project Structure
+
+```
+rankr/
+├── client/          # React + Vite frontend
+├── server/          # Node.js + Socket.io backend
+├── shared/          # Shared TypeScript types
+├── docker-compose.yml
+└── package.json
+```
+
+---
+
+## Key Design Decisions
+
+**Why Socket.io over polling?**
+HTTP polling would introduce noticeable lag for a collaborative ranking experience. Socket.io gives true bidirectional communication so all participants see state changes instantly.
+
+**Why Redis?**
+Poll sessions are ephemeral and read/written frequently by multiple participants simultaneously. Redis handles this with far lower latency than a traditional relational database, and RedisJSON lets us store structured poll state without serialization overhead.
+
+**Why Docker?**
+Redis requires a running server — Docker Compose removes the need for participants or contributors to install and configure Redis manually. One command spins up the full environment.
+
+---
+
+## Future Improvements
+
+- Persistent poll history with user accounts
+- Weighted ranking algorithms (Borda count, instant-runoff)
+- Mobile-optimized UI
+- Public deployment with hosted Redis
+
+---
+
+## License
+
+MIT License
 
 
